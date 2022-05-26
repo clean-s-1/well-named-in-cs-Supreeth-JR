@@ -46,15 +46,26 @@ namespace TelCo.ColorCoder
         public static List<(Color, Color)> PrintColorCode()
         {
             var colorPair = new List<(Color, Color)>();
-            foreach (Color manjorColor in colorMapMajor)
+            foreach (Color majorColor in colorMapMajor)
             {
                 foreach (Color minorColor in colorMapMinor)
                 {
-                    colorPair.Add((manjorColor, minorColor));
+                    colorPair.Add((majorColor, minorColor));
                 }
             }
 
             return colorPair;
+        }
+
+        /// <summary>
+        /// Gets Table header.
+        /// </summary>
+        /// <returns>
+        /// Header.
+        /// </returns>
+        public static string PrintColorCodeHeader()
+        {
+            return "Pair No. Major Color  \t Minor Color";
         }
     }
 }

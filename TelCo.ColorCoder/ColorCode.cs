@@ -7,11 +7,14 @@ namespace TelCo.ColorCoder
         /// <summary>
         /// Given a pair number function returns the major and minor colors in that order
         /// </summary>
-        /// <param name="pairNumber">Pair number of the color to be fetched</param>
-        /// <returns></returns>
+        /// <param name="pairNumber">
+        /// The function supports only 1 based index. Pair numbers valid are from 1 to 25
+        /// </param>
+        /// <returns>
+        /// Color Pair
+        /// </returns>
         public static ColorPair GetColorFromPairNumber(int pairNumber)
         {
-            // The function supports only 1 based index. Pair numbers valid are from 1 to 25
             int minorSize = ColorMap.colorMapMinor.Length;
             int majorSize = ColorMap.colorMapMajor.Length;
             if (pairNumber < 1 || pairNumber > minorSize * majorSize)
@@ -38,8 +41,12 @@ namespace TelCo.ColorCoder
         /// <summary>
         /// Given the two colors the function returns the pair number corresponding to them
         /// </summary>
-        /// <param name="pair">Color pair with major and minor color</param>
-        /// <returns></returns>
+        /// <param name="pair">
+        /// Color pair with major and minor color
+        /// </param>
+        /// <returns>
+        /// Color Pair
+        /// </returns>
         public static int GetPairNumberFromColor(ColorPair pair)
         {
             // Find the major color in the array and get the index

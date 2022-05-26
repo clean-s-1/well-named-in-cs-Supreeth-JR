@@ -48,7 +48,7 @@ namespace TelCo.ColorCoder
             Console.WriteLine("[In]Colors: {0}, [Out] PairNumber: {1} \n", testPair2, pairNumber);
             Debug.Assert(pairNumber == 6);
 
-            Console.WriteLine($"Pair No. Major Color  \t Minor Color");
+            Console.WriteLine(ColorMap.PrintColorCodeHeader());
             var colorPair = ColorMap.PrintColorCode();
             colorPair.ForEach(color =>
             {
@@ -56,6 +56,7 @@ namespace TelCo.ColorCoder
                     .WriteLine(
                         $"{++pairNo} \t {color.Item1} { (pairNo >= 16 ? string.Empty : "\t") }  {color.Item2}");
             });
+            Debug.Assert(colorPair.Count == 25);
         }
     }
 }
